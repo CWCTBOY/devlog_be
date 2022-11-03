@@ -15,6 +15,9 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 jpa:
   hibernate:
@@ -23,7 +26,3 @@ jpa:
       physical-strategy:
         org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   show-sql: true
-
-mvc:
-  pathmatch:
-    matching-strategy: ant_path_matcher
