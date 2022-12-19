@@ -16,5 +16,4 @@ public interface ArticleService {
   public List<ArticleResponseDto> findAll();
 
   public Long deleteById(Long articleId);
-  
 }

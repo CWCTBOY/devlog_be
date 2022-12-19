@@ -29,12 +29,12 @@ public class ViewLogServiceImpl implements ViewLogService {
       .orElseThrow(() -> new NoSuchElementException("please check the id again."));
     ViewLog viewLog = ViewLog.builder()
       .article(foundArticle)
-      .ip(ipAddressParser(request))
+      .ip(ipParser(request))
       .build();
     viewLogRepository.save(viewLog);
   }
 
-  private String ipAddressParser(HttpServletRequest request) {
+  private String ipParser(HttpServletRequest request) {
     String ip = request.getHeader("X-FORWARDED-FOR");
     if (ip == null) {
       ip = request.getRemoteAddr();
